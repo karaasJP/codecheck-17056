@@ -8,7 +8,8 @@ def main():
     setlength = int(input())
     print("先頭となる文を入力してください　>>", end=" ")
     sentence = input()
-    while len(sentence) <= setlength:
+    
+    while len(sentence) <= setlength: #指定した長さになるまで繋げてサジェストをもらう
         response = textsuggest(sentence)
         texts = response.text[46:-2].split(',')
         text1 = texts[0][1:-1]
@@ -27,7 +28,7 @@ def textsuggest(sentence):
         params={'apikey': text_suggest_api_key,
                 'previous_description': sentence,
                 'separation': '2',
-                'style': '73b4ee57-e3e2-4c94-82ff-6bdd2660dfb9'})
+                'style': '73b4ee57-e3e2-4c94-82ff-6bdd2660dfb9'}) #夏目漱石のぼっちゃんでモデルを作成してみた
 
     return(response)
 
