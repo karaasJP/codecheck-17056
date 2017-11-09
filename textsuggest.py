@@ -4,21 +4,14 @@ import apikeys
 
 
 def main():
-    allsentence = ''
-    while True:
-        print(">>", end=" ")
-        sentence = input()
-        if sentence == 'end':
-            break
-        response = textsuggest(sentence)
-        texts = response.text[46:-2].split(',')
-        text1 = texts[0][1:-1]
-        # print(sentence)
-        allsentence += sentence + text1
-        print(text1)
+    print("先頭となる文を入力してください　>>", end=" ")
+    sentence = input()
+    response = textsuggest(sentence)
+    texts = response.text[46:-2].split(',')
+    text1 = texts[0][1:-1]
 
-    print(allsentence)
-    print(len(allsentence))
+    print(sentence + text1)
+
 
 
 def textsuggest(sentence):
