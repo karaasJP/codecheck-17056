@@ -27,7 +27,7 @@ def textsuggest(sentence):
         params={'apikey': text_suggest_api_key,
                 'previous_description': sentence,
                 'separation': '2',
-                'style': '73b4ee57-e3e2-4c94-82ff-6bdd2660dfb9'})
+                'style': 0})
 
     return(response)
 
